@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install>
+<extension version="3.8" type="plugin" group="system" method="upgrade">
+  <name>PLG_SYSTEM_WEBPCONVERT</name>
+  <description>PLG_WEBPCONVERT_DESCRIPTION</description>
+  <version>1.0.0</version>
+  <author>Travis Risner</author>
+  <authorEmail>info@bluewall.com</authorEmail>
+  <authorUrl>https://bluewall.com</authorUrl>
+  <creationDate>November 2018</creationDate>
+  <copyright>2018 Bluewall, LLC. All rights reserved.</copyright>
+  <license>GNU Lesser General Public License version 3 or later</license>
+  <scriptfile>install.php</scriptfile>
+  <files>
+    <filename plugin="webpconvert">webpconvert.php</filename>
+    <folder>language</folder>
+  </files>
+  <config>
+    <fields name="params">
+
+    </fields>
+  </config>
+</extension>
