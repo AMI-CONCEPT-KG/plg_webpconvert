@@ -1,6 +1,6 @@
 <?php
   /**
-   * @copyright  Copyright (C) Clay Freeman. All rights reserved.
+   * @copyright  Copyright (C) Travis risner. All rights reserved.
    * @license    GNU Lesser General Public License version 3 or later.
    */
 
@@ -11,7 +11,7 @@
   use \Joomla\CMS\Installer\InstallerScript;
 
   /**
-   * The HTTP/2 Push automated Joomla! system plugin installer script.
+   * The WebPConvert Joomla! system plugin installer script.
    */
   final class plgSystemWebPConvertInstallerScript extends InstallerScript {
     /**

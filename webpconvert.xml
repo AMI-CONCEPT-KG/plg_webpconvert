@@ -2,7 +2,7 @@
 <!DOCTYPE install>
 <extension version="3.8" type="plugin" group="system" method="upgrade">
   <name>PLG_SYSTEM_WEBPCONVERT</name>
-  <description>PLG_WEBPCONVERT_DESCRIPTION</description>
+  <description>PLG_SYSTEM_WEBPCONVERT_DESCRIPTION</description>
   <version>1.0.0</version>
   <author>Travis Risner</author>
   <authorEmail>info@bluewall.com</authorEmail>
@@ -17,7 +17,13 @@
   </files>
   <config>
     <fields name="params">
-
+      <fieldset name="basic">
+        <field name="quality" type="text" default="100"
+                  class="form-control"
+                  label="PLG_SYSTEM_WEBPCONVERT_HEADER_QUALITY"
+            description="PLG_SYSTEM_WEBPCONVERT_DESC_QUALITY">
+        </field>
+      </fieldset>
     </fields>
   </config>
 </extension>

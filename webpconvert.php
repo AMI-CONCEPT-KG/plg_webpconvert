@@ -22,7 +22,6 @@
      */
     protected $app;
     protected $webp_support = false;
-    protected $quality = 100;
 
     /**
      * Fetches a reference to Joomla's application instance and calls the
@@ -166,7 +165,7 @@
       //Create an image resource from the origin
       $image_resource = \imagecreatefromstring(\file_get_contents($origin));
       //Return true if conversion is possible
-      if(\imagewebp($image_resource, $dest, $this->quality)) {
+      if(\imagewebp($image_resource, $dest, $this->params->get('quality'))) {
         return true;
       } else {
         //Return false on error
