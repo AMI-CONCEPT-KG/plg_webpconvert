@@ -92,7 +92,7 @@
     //Convert XML Element back to string
     $body = $body->asXML();
     //Loop through the converted images array
-    foreach($converted_images as $image) {
+    foreach ($converted_images as $image) {
       //replace original filename with webp filename
       $body = \str_replace($image['original'], $image['webp'], $body);
     }
@@ -143,7 +143,7 @@
     $webp_path = \substr_replace($image, 'webp', \strrpos($image, '.') +1);
     //$webp_path = \dirname($webp_path).'/webp/'.\basename($webp_path);
     //Check for the existence of a webp
-    if(!$this->webpExists($webp_path)) {
+    if (!$this->webpExists($webp_path)) {
       //Run the conversion
       $this->convertImage($image, $webp_path);
     }
@@ -152,7 +152,7 @@
 
   protected function webpExists(string $image): bool {
     //If file exists
-    if(\is_file(JPATH_ROOT.'/'.$image)) {
+    if (\is_file(JPATH_ROOT.'/'.$image)) {
       return true;
     } else {
       return false;
@@ -161,19 +161,14 @@
 
   protected function convertImage(string $origin, string $dest): bool {
     //Check to ensure origin file exists
-    if(\is_file($origin)) {
+    if (\is_file($origin)) {
       //Create an image resource from the origin
       $image_resource = \imagecreatefromstring(\file_get_contents($origin));
       //Return true if conversion is possible
-      if(\imagewebp($image_resource, $dest, $this->params->get('quality'))) {
+      if (\imagewebp($image_resource, $dest, $this->params->get('quality'))) {
         return true;
-      } else {
-        //Return false on error
-        return false;
-      }
-    } else {
-      //Return false is origin doesn't exist
-      return false;
+      } 
     }
+    return false;
   }
 }
