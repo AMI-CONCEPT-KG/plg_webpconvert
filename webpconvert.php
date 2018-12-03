@@ -164,10 +164,11 @@
     if (\is_file($origin)) {
       //Create an image resource from the origin
       $image_resource = \imagecreatefromstring(\file_get_contents($origin));
+      imagepalettetotruecolor($image_resource);
       //Return true if conversion is possible
       if (\imagewebp($image_resource, $dest, $this->params->get('quality'))) {
         return true;
-      } 
+      }
     }
     return false;
   }
